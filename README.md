@@ -29,12 +29,12 @@ I used PostgreSQL and created a simple users table for authentication:
 **API Structure**
 
 Auth APIs
-POST /register → create new user
-POST /login → login user
-Quiz API
-POST /quiz
-Input: topic, difficulty
-Output: generated MCQ questions
+- POST /register → create new user
+- POST /login → login user
+- Quiz API
+- POST /quiz
+- Input: topic, difficulty
+- Output: generated MCQ questions
 
 - This API uses Gemini AI to generate questions.
 - If AI fails, fallback questions are returned to avoid breaking the app.

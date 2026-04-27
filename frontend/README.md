@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+**AI Quiz Application**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Overview**
+This project is an AI-based quiz application where users can register, generate quizzes using a topic, attempt them, and view their scores with answer review.
 
-## Available Scripts
+**How to Run Locally**
 
-In the project directory, you can run:
+**Backend**
+cd backend
+npm install
+node index.js
 
-### `npm start`
+**Frontend**
+cd frontend
+npm install
+npm start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Database Design**
+I used PostgreSQL and created a simple users table for authentication:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+id (primary key)
+name
+email
+password
 
-### `npm test`
+- Since time was limited, I focused only on user authentication.
+- I planned to add quiz history tables later.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**API Structure**
 
-### `npm run build`
+Auth APIs
+POST /register → create new user
+POST /login → login user
+Quiz API
+POST /quiz
+Input: topic, difficulty
+Output: generated MCQ questions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- This API uses Gemini AI to generate questions.
+- If AI fails, fallback questions are returned to avoid breaking the app.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Challenges Faced**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. AI Response Issues
+AI was not always returning valid JSON
+I solved this by cleaning the response and adding fallback questions
 
-### `npm run eject`
+2. Deployment Issues
+Faced multiple errors while deploying frontend (build issues, permissions)
+Fixed using:
+--legacy-peer-deps
+adjusting build commands
+handling permission issues
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Git Issues
+Faced submodule issue with frontend folder
+Resolved by creating a clean repo and pushing again
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Features Implemented**
+User Registration & Login
+AI-based quiz generation
+Topic-based quiz
+Difficulty selection
+Answer selection and score calculation
+Review answers (correct/wrong)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Features Not Implemented**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Number of questions
+- Quiz history
+- Progress tracking
+These require additional database design and more time, so I focused on completing the core flow first.

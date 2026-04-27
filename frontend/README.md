@@ -70,3 +70,15 @@ Review answers (correct/wrong)
 - Quiz history
 - Progress tracking
 These require additional database design and more time, so I focused on completing the core flow first.
+
+**My Approach**
+
+I focused on:
+
+- Making the core flow work end-to-end
+- Ensuring the app doesn’t crash (fallback handling)
+- Keeping the UI simple and usable
+
+**Links**
+GitHub: https://github.com/RishikaV303/quiz-ai.git
+Live App: https://quiz-ai-omega-lyart.vercel.app/

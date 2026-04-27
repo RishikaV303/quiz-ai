@@ -1,84 +1,70 @@
-**AI Quiz Application**
+# Getting Started with Create React App
 
-**Overview**
-This project is an AI-based quiz application where users can register, generate quizzes using a topic, attempt them, and view their scores with answer review.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**How to Run Locally**
+## Available Scripts
 
-**Backend**
-cd backend
-npm install
-node index.js
+In the project directory, you can run:
 
-**Frontend**
-cd frontend
-npm install
-npm start
+### `npm start`
 
-**Database Design**
-I used PostgreSQL and created a simple users table for authentication:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-id (primary key)
-name
-email
-password
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- Since time was limited, I focused only on user authentication.
-- I planned to add quiz history tables later.
+### `npm test`
 
-**API Structure**
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Auth APIs
-POST /register → create new user
-POST /login → login user
-Quiz API
-POST /quiz
-Input: topic, difficulty
-Output: generated MCQ questions
+### `npm run build`
 
-- This API uses Gemini AI to generate questions.
-- If AI fails, fallback questions are returned to avoid breaking the app.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-**Challenges Faced**
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-1. AI Response Issues
-AI was not always returning valid JSON
-I solved this by cleaning the response and adding fallback questions
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-2. Deployment Issues
-Faced multiple errors while deploying frontend (build issues, permissions)
-Fixed using:
---legacy-peer-deps
-adjusting build commands
-handling permission issues
+### `npm run eject`
 
-3. Git Issues
-Faced submodule issue with frontend folder
-Resolved by creating a clean repo and pushing again
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-**Features Implemented**
-User Registration & Login
-AI-based quiz generation
-Topic-based quiz
-Difficulty selection
-Answer selection and score calculation
-Review answers (correct/wrong)
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-**Features Not Implemented**
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-- Number of questions
-- Quiz history
-- Progress tracking
-These require additional database design and more time, so I focused on completing the core flow first.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-**My Approach**
+## Learn More
 
-I focused on:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-- Making the core flow work end-to-end
-- Ensuring the app doesn’t crash (fallback handling)
-- Keeping the UI simple and usable
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-**Links**
-GitHub: https://github.com/RishikaV303/quiz-ai.git
-Live App: https://quiz-ai-omega-lyart.vercel.app/
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

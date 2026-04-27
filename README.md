@@ -3,6 +3,13 @@
 **Overview**
 This project is an AI-based quiz application where users can register, generate quizzes using a topic, attempt them, and view their scores with answer review.
 
+**Tech Stack**
+Frontend: React.js
+Backend: Node.js (Express)
+Database: PostgreSQL
+AI Integration: Google Gemini API
+Deployment: Vercel (Frontend)
+
 **How to Run Locally**
 
 **Backend**

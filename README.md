@@ -6,22 +6,22 @@ This project is an AI-based quiz application where users can register, generate 
 **How to Run Locally**
 
 **Backend**
-cd backend
-npm install
-node index.js
+- cd backend
+- npm install
+- node index.js
 
 **Frontend**
-cd frontend
-npm install
-npm start
+- cd frontend
+- npm install
+- npm start
 
 **Database Design**
 I used PostgreSQL and created a simple users table for authentication:
 
-id (primary key)
-name
-email
-password
+- id (primary key)
+- name
+- email
+- password
 
 - Since time was limited, I focused only on user authentication.
 - I planned to add quiz history tables later.
